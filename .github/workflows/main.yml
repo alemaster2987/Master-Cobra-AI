@@ -3,8 +3,7 @@ on: [push]
 jobs:
   ps3-build:
     runs-on: ubuntu-latest
-    container:
-      image: ghcr.io/ps3dev/ps3dev:master
+    container: psl1ght/psl1ght:latest
     steps:
       - uses: actions/checkout@v4
       
@@ -18,3 +17,4 @@ jobs:
         with:
           name: MasterCobra_v7_PKG
           path: "*.pkg"
+
