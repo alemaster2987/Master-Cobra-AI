@@ -6,20 +6,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install Dependencies
+      - name: Build PKG
         run: |
-          sudo apt-get update
-          sudo apt-get install -y build-essential git libgmp3-dev libelf-dev python3
-
-      - name: Setup PS3 Toolchain
-        run: |
-          # Esto descarga e instala el entorno mínimo necesario
-          docker run --rm -v $(pwd):/src psl1ght/psl1ght:latest /bin/bash -c "cd /src && make clean && make"
+          # Usamos un contenedor que ya tiene todo instalado para compilar
+          docker run --rm -v $(pwd):/src psl1ght/psl1ght:latest /bin/bash -c "cd /src && make"
 
       - name: Upload PKG
         uses: actions/upload-artifact@v4
         with:
-          name: MasterCobra_v7_PKG
-          path: "*.pkg"
+          name: Mi-App-PS3
+          path: "./*.pkg"
 
 
