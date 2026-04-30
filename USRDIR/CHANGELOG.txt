@@ -1,0 +1,6 @@
+[v7.0 - LANZAMIENTO INICIAL]
+- Motor Master-Cobra v1.0 activado.
+- Soporte para NFS U2, GoW II, GTA SA y RE 2.
+- Sistema de seguridad Shadow Patching implementado.
+- Interfaz estilo PlayStation Legacy integrada.
+- Verificador de espacio en HDD activo.

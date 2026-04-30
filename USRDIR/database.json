@@ -1,0 +1,10 @@
+{
+  "version": "7.0",
+  "games": [
+    {
+      "id": "SLUS-21151",
+      "name": "NFS Underground 2 (PS2)",
+      "cheats": [{ "name": "Dinero", "offset": "0x2A10", "value": "0xFF", "size": 1 }]
+    }
+  ]
+}
