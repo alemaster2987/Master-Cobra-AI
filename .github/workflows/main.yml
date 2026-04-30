@@ -3,22 +3,21 @@ on: [push]
 jobs:
   ps3-build:
     runs-on: ubuntu-latest
+    container: stayshell/ps3dev:latest
     steps:
       - uses: actions/checkout@v4
       
-      - name: Install PS3Dev
-        run: |
-          docker pull ps3dev/ps3dev:master
-          
       - name: Compile
         run: |
-          docker run --rm -v $(pwd):/src ps3dev/ps3dev:master /bin/bash -c "cd /src && make clean && make"
+          make clean
+          make
           
       - name: Upload PKG
         uses: actions/upload-artifact@v4
         with:
           name: MasterCobra_v7_PKG
           path: "*.pkg"
+
 
 
 
