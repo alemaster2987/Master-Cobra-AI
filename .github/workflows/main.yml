@@ -1,0 +1,17 @@
+name: Build-Master-Cobra
+on: [push]
+jobs:
+  ps3-build:
+    runs-on: ubuntu-latest
+    container: ps3dev/ps3dev:latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Compile
+        run: |
+          . /etc/profile.d/ps3dev.sh
+          make clean && make
+      - name: Upload PKG
+        uses: actions/upload-artifact@v3
+        with:
+          name: MasterCobra_v7_PKG
+          path: "*.pkg"
